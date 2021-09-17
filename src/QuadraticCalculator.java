@@ -42,13 +42,17 @@ public class QuadraticCalculator {
             // otherwise check to see if it is something we can use, if so grab the rest of the data
             else if (inputScanner.hasNextInt()) {
                 int a, b, c;
-                a = inputScanner.nextInt();
-                b = inputScanner.nextInt();
-                c = inputScanner.nextInt();
-                // do quadratic calculation and output possible answers (there are two)
-                double[] solutions = solveQuadraticEquation(a, b, c);
-                System.out.println("x=" + solutions[0]);
-                System.out.println("x=" + solutions[1]);
+                try {
+                    a = inputScanner.nextInt();
+                    b = inputScanner.nextInt();
+                    c = inputScanner.nextInt();
+                    // do quadratic calculation and output possible answers (there are two)
+                    double[] solutions = solveQuadraticEquation(a, b, c);
+                    System.out.println("x=" + solutions[0]);
+                    System.out.println("x=" + solutions[1]);
+                } catch (Exception e) {
+                    System.out.println("Invalid Numbers");
+                } 
             }
             // it it is none of the above, it is probably invalid input
             else {
